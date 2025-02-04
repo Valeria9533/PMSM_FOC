@@ -3,6 +3,8 @@ Field-oriented control of PMSM with 15 pole pairs, halls and absolute encoder. M
 
 Code is written for STM32F407 MCU, using HAL library.
 
-For now only direct torque control is implemented. Speed loop is coming soon...
+Current loop is tuned. 
+
+Speed is coming.
 
 Freemaster software is used (but not nessesarily) for useful control of motor and see plots and transients of currents, voltages, etc. 
