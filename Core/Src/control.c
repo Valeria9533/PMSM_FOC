@@ -57,10 +57,14 @@ extern int16_t 		dir_step, theta_el_deg, step;
 extern trig_angle sinCos_theta_el;
 extern const int16_t sin_table[257];
 
+int16_t TIM1_ADC_1_S, TIM1_ADC_1_E, TIM1_ADC_2_S, TIM1_ADC_2_E, TIM1_ADC_1, TIM1_ADC_2;
+
 /* Functions */
 void motor_control(void) {
 
 	static int16_t t_i;
+	
+	TIM1_ADC_1_S = TIM1->CNT;
 	
 	// Update PI parameters 
 	current_PI_params.K_p = pi_p_gain_is;
@@ -137,10 +141,16 @@ void motor_control(void) {
 	
 	// Load values to TIM1 CC registers 
 	PWM_Load(&u_Sabc);
+	
+	TIM1_ADC_1_E = TIM1->CNT;
+	
+	TIM1_ADC_1 = abs(TIM1_ADC_1_E - TIM1_ADC_1_S);
 }
 
 void motor_control_add(void) {
 
+	TIM1_ADC_2_S = TIM1->CNT;
+	
 	// Setting current loop
 	if (Command == 'i') theta_el_deg = 0;
 	
@@ -156,6 +166,10 @@ void motor_control_add(void) {
 	PWM_Load(&u_Sabc);
 	
 	FMSTR_Recorder();
+	
+	TIM1_ADC_2_E = TIM1->CNT;
+	
+	TIM1_ADC_2 = abs(TIM1_ADC_2_E - TIM1_ADC_2_S);
 }
 
 void get_speed_encoder(void) {
@@ -220,6 +234,9 @@ void PWM_Enable(void) {
 	
 	TIM1->CCER |= 0x1555;	
 	TIM1->BDTR |= TIM_BDTR_MOE;
+	
+	TIM8->CCER |= (1<<0)|(1<<4)|(1<<5);	
+	TIM8->BDTR |= TIM_BDTR_MOE;
 }	
 
 void PWM_Disable(void) {	

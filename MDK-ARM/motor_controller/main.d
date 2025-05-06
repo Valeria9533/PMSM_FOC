@@ -26,6 +26,7 @@ motor_controller\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_corte
 motor_controller\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc.h
 motor_controller\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_adc.h
 motor_controller\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc_ex.h
+motor_controller\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_can.h
 motor_controller\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h
 motor_controller\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h
 motor_controller\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h
@@ -41,6 +42,7 @@ motor_controller\main.o: ../Freemaster/PE_freemaster_tsa.h
 motor_controller\main.o: ../Freemaster/serial.h
 motor_controller\main.o: ../Freemaster/PE_freemaster_56F8xxx.h
 motor_controller\main.o: ../Core/Inc/adc.h
+motor_controller\main.o: ../Core/Inc/can.h
 motor_controller\main.o: ../Core/Inc/dma.h
 motor_controller\main.o: ../Core/Inc/spi.h
 motor_controller\main.o: ../Core/Inc/tim.h

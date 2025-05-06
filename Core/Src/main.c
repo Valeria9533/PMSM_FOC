@@ -19,6 +19,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "adc.h"
+#include "can.h"
 #include "dma.h"
 #include "spi.h"
 #include "tim.h"
@@ -100,6 +101,9 @@ int main(void)
   MX_ADC1_Init();
   MX_TIM7_Init();
   MX_SPI2_Init();
+  MX_CAN1_Init();
+  MX_CAN2_Init();
+  MX_TIM8_Init();
   /* USER CODE BEGIN 2 */
 	USER_Init();
   /* USER CODE END 2 */
@@ -178,12 +182,16 @@ void USER_Init(void) {
   // TIM7	
 	HAL_TIM_Base_Start_IT(&htim7);
 	
+	HAL_TIM_Base_Start_IT(&htim8);
+
 	// Reset fault while power up
 	__HAL_TIM_CLEAR_FLAG(&htim1, TIM_FLAG_BREAK);				
 	
 	// SPI2 Enable for SSI (LIR or RM)
 	SET_BIT(SPI2->CR1, SPI_CR1_SPE);
 	CLEAR_BIT(SPI2->CR1, SPI_CR1_RXONLY);	
+	
+	//CAN_Transmit();
 }
 /* USER CODE END 4 */
 

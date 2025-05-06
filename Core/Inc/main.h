@@ -68,12 +68,6 @@ void Error_Handler(void);
 #define ADC3_IN3_IW_GPIO_Port GPIOA
 #define SPI2_NSS_Pin GPIO_PIN_12
 #define SPI2_NSS_GPIO_Port GPIOB
-#define H1_Pin GPIO_PIN_6
-#define H1_GPIO_Port GPIOC
-#define H2_Pin GPIO_PIN_7
-#define H2_GPIO_Port GPIOC
-#define H3_Pin GPIO_PIN_8
-#define H3_GPIO_Port GPIOC
 #define POWER_OK_Pin GPIO_PIN_2
 #define POWER_OK_GPIO_Port GPIOD
 #define RUN_Pin GPIO_PIN_3
