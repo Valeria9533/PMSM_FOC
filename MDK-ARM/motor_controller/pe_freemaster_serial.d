@@ -1,0 +1,9 @@
+motor_controller\pe_freemaster_serial.o: ..\Freemaster\PE_freemaster_serial.c
+motor_controller\pe_freemaster_serial.o: ..\Freemaster\PE_freemaster.h
+motor_controller\pe_freemaster_serial.o: ..\Freemaster\PE_freemaster_cfg.h
+motor_controller\pe_freemaster_serial.o: ..\Freemaster\PE_freemaster_tsa.h
+motor_controller\pe_freemaster_serial.o: ..\Freemaster\PE_freemaster_private.h
+motor_controller\pe_freemaster_serial.o: ..\Freemaster\PE_freemaster_56F8xxx.h
+motor_controller\pe_freemaster_serial.o: ..\Freemaster\PE_freemaster_protocol.h
+motor_controller\pe_freemaster_serial.o: ..\Freemaster\serial.h
+motor_controller\pe_freemaster_serial.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
